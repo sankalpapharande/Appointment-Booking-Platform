@@ -1,29 +1,60 @@
-<html>
-  <style>
-    body{ 
-      font-size: 15pt;
-      font-family: arial;
-    }
-  </style>
+{% extends "base.html" %} {% block title %}Home Page{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <body>
+      <h4 style="text-align: center">Select the service you're looking for</h4>
 
+      <form method="POST" action="{{url_for('client.index')}}">
+        <div style="width: 70%;" class="d-grid gap-3 col-6 mx-auto">
+          <div>
+            <select name="type" class="form-select" aria-label="Default select example">
+              <option selected>Service Type</option>
+              {% for n in biz_types %}
+                <option value="{{n}}">{{n}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <select name="location" class="form-select">
+              <option selected>Location</option>
+              {% for n in locations %}
+                <option value="{{n[0]+'||'+n[1]}}" name="location">{{n[0]+', '+n[1]}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <!-- <select name="datetime" class="form-select" aria-label="Default select example">
+              <option selected name="datetime">Datetime</option>
+            </select> -->
+              <input id="time" type="date" name="time" style="width: 100%; border-radius: 5px; border-style: solid; padding: 7px;" >
 
-<body>
-  <h1>Some famous Computer Scientists</h1>
-  <div>{{data}}</div>
+          </div>
+          <button style="width: 50%; margin: auto;" class="btn btn-primary" type="submit">Search</button>
+        </div>
+      </form>
 
-  <div>
-    {% for n in data %}
-    <div>{{n}}</div>
-    {% endfor %}
-  </div>
+      {% if biz_list %}
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+          {% for b in biz_list %}
+            <div class="card mt-4" style="min-width: 18rem; margin-right: 10px; max-width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">{{b['name']}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{b['type']}} | 🕑 {{b['openAt']}} - {{b['closeAt']}}</h6>
+                <p class="card-text">Location: {{b['address']}}</p>
+                
+                <form action="{{ url_for('client.book', provider_id=b['provider_id']) }}" method="get">
+                <!-- <form action="/{{b['provider_id']}}" method="get"> -->
+                  <button data-id='{{b['name']}}' type="submit" class="book btn btn-outline-primary btn-sm">Book</button>
+                  <!-- <a href="#" class="book card-link">Book now</a> -->
+                </form>
+                
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
 
-<p><a href="another">Go to the other page</a></p>
-
-<form method="POST" action="/add">
-<p>Name of new computer scientist: <input type="text" name="name"> <input type="submit" value="Add"></p>
-</form>
-
-</body>
-
-
-</html>
+  </body>
+  {% endblock %}

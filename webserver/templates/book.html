@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block title %}Home Page{% endblock %} 
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+
+<h4 style="text-align: center;">{{provider_name}}</h4>
+
+<form method="POST" >
+  <div style="width: 70%;" class="d-grid gap-3 col-6 mx-auto">
+    <div>
+      <select name='employee_select' class="form-select">
+        <option selected>Select staff member</option>
+        {% for e in employees %}
+          <option value="{{e['employee_id']}}">{{e['name']}}</p>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <select name="service_select" class="form-select">
+        <option selected>Select service</option>
+        {% for el in provider_services %}
+          <option value="{{el}}">{{el}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <form>
+      <label >Enter a date and time for your booking:</label>
+      <input id="date" type="date" name="date" style="border-radius: 5px; border-style: solid; padding: 7px;" >
+    </form>
+    <button style="width: 50%; margin: auto;" class="btn btn-outline-primary" type="submit">Check availability</button>
+  </div>
+</form>
+
+
+
+{% if timeslots and service%}
+  <hr>
+  <div style="width: 70%; margin-top: 20px;" class="d-grid gap-3 col-6 mx-auto">
+    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+      <p style="text-align: center;"><b>Service:</b> {{service['name']}}</p>
+      <p style="text-align: center;"><b>Cost:</b> ${{service['cost']}}</p>
+      <p style="text-align: center;"><b>Duration:</b> {{service['duration']}} mins</p>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <p style="text-align: center;">Available time slots for <b>{{selected_date}}</b></p>
+    </div>
+
+    <div >
+      <form method="post">
+        <input type="hidden" id="custId" name="employee_select" value="{{selected_employee}}">
+        <input type="hidden" id="custId" name="date" value="{{selected_date}}">
+        <input type="hidden" id="custId" name="service_select" value="{{service['name']}}">
+
+        <select id="time" name="time" class="form-select" size="10" aria-label="size 3 select" onchange="getSelectedTime()">
+            {% for date in timeslots if not date[-1] %}            
+                <option value="{{date[0]}}">{{date[0]}}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <button style="width: 50%; margin: auto;" class="btn btn-primary" type="submit" >Confirm</button>
+    </form>
+  </div>
+{% endif %}
+
+
+<script src="{{ url_for('static', filename='js/script.js')}}"></script>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,12 @@
+{
+    "Dining": ["Order Pastry Online", "Table Booking"],
+    "Tourism": ["Guided Tour of Dover", "Volcano Tour"],
+    "Health": ["Eye Check-up", "Teeth Cleaning"],
+    "Barbers": ["Mens Haircut", "Womens Hair Care Package"],
+    "Electronics": ["New MacBook PreBook", "New Galaxy S PreBook"],
+    "Car Repair": ["Full Car Check up", "Engine Checkup"],
+    "Energy Service": ["New Connection Booking"],
+    "Internet Service": ["New Internet Connection", "Upgrade Connection"],
+    "Home Equipment Repair": ["Plumbing Work", "Drilling"],
+    "Education": ["Complete School Stationary Shopping"]
+}
