@@ -181,4 +181,19 @@ def appointments():
     context['username'] = user['username'] if user else None
     context['appointments'] = user_appts
 
+    if request.method == 'POST':
+        description = request.form.get("description")
+        employee_id = request.form.get("employee_id")
+        rate_score = request.form.get("rating")
+        client_id = user['userId']
+        
+        addRatingQ = Q.add_rating(description, rate_score, client_id, employee_id)
+        
+        try:
+            g.conn.execute(addRatingQ)
+        except BaseException as err:
+            print('Could not add rating ', err)
+            pass
+
     return render_template("appointments.html", **context)
+

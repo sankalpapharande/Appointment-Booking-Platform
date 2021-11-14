@@ -1,1 +1,3 @@
 .DS_Store
+webserver/__pycache__/
+*/__pycache__/*

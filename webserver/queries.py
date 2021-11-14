@@ -1,6 +1,3 @@
-from os import stat
-
-
 class Query:
     """ Query strings; needs to be executed """
     
@@ -48,7 +45,7 @@ class Query:
     def get_user_appointments(user_id):
         return f"SELECT datetime, status, so.name AS service_name,\
                         duration, cost, u.name AS employee_name, \
-                        p.name as provider_name \
+                        p.name as provider_name, e.employee_id AS eid \
                 FROM appointments a, service_offerings so, users u, \
                     employee e, provider p \
                 WHERE a.employee_id = u.user_id AND \
@@ -78,8 +75,13 @@ class Query:
 
     @staticmethod
     def add_appointment(datetime, serviceId, employeeId, clientId):
-        return f" INSERT INTO appointments(datetime, status, service_id, employee_id, client_id)\
+        return f"INSERT INTO appointments(datetime, status, service_id, employee_id, client_id)\
                 VALUES ('{datetime}', 'Pending', {serviceId}, {employeeId}, {clientId})"
+
+    @staticmethod
+    def add_rating(description, rate_score, client_id, employee_id):
+        return f"INSERT INTO employee_ratings(rating, description, client_id, employee_id) \
+                 VALUES ({rate_score}, '{description}', '{client_id}', '{employee_id}')"
 
 
 
