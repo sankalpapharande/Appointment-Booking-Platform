@@ -57,7 +57,7 @@ class Query:
 
     @staticmethod
     def get_businesses(biz_type, city, state, startRange='', endRange=''):
-        baseQ = "SELECT p.type, p.name, l.street, l.city, l.state, p.provider_id, oh.open_at, oh.close_at \
+        baseQ = "SELECT DISTINCT p.type, p.name, l.street, l.city, l.state, p.provider_id, oh.open_at, oh.close_at \
                  FROM provider p, location l, employee e, appointments a, operating_hours oh \
                  WHERE p.location_id = l.location_id AND \
                        p.provider_id = e.provider_id AND \
