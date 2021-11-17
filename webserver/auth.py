@@ -34,7 +34,7 @@ def login():
                         print('redirect to employee dashboard')
                         # CHANGE THIS
 
-                        resp = make_response(redirect(url_for('index')))
+                        resp = make_response(redirect(url_for('admin.index')))
                         resp.set_cookie('username', userName)
                         session['user'] = {"username": userName, "userId": userId}
                         print('session', session['user'])
