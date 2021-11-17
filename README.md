@@ -1,6 +1,14 @@
 # coms4111-p1
 Repository for Introduction to Databases (COMS4111) Project 1
 
+35.243.128.11
+
+The PostgreSQL account:  spa2138
+
+
+The URL of your web application: http://35.243.128.11:8111/client/
+
+
  ## Project Overview ##
 We developed a centralized on-demand appointment booking platform that will connect business providers with
 users who are looking to schedule appointments.
@@ -9,6 +17,20 @@ The primary focus of this project is to execute a substantial real-world databas
 
 Flask Server can be initiated using :
 ```python3 server.py```
+
+ ## Parts Implemented ##
+1. Service Provider Dashboard
+   1. View appointments
+   2. Accept or reject the appointment request
+2. Customers Dashboard
+   1. View a list of all businesses
+   2. Search and filter business based on service offered, availability, or location
+   3. Make an appointment
+   4. Leave a review/rating after the appointment
+
+ ## Web Pages ##
+1. admin/ : Service Provider Dashboard where employee can view the appointments
+2. client/: Where customers can book the appointment
 
  ## Directory structure: ##
 1. ``static``

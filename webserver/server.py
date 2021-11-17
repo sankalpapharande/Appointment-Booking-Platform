@@ -29,7 +29,7 @@ app.register_blueprint(ab)
 app.register_blueprint(auth)
 
 # Create connection
-DATABASEURI = 'postgresql://localhost:5432/project_1'
+DATABASEURI = "postgresql://spa2138:6082@34.74.246.148/proj1part2"
 engine = create_engine(DATABASEURI)
 
 
