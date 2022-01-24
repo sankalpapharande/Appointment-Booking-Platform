@@ -1,0 +1,173 @@
+INSERT INTO location (zip_code, street, city, state)
+VALUES ('87858', '7984 Odio Rd.', 'Erie', 'Pennsylvania'),
+       ('36343', '3764 Dolor. Rd.', 'Reading', 'Pennsylvania'),
+       ('36464', '9882 Mollis Avenue', 'Norfolk', 'Virginia'),
+       ('88644', '866 Cursus St.', 'Saint Louis', 'Missouri'),
+       ('85640', 'Viverra. St.', 'Richmond', 'Virginia'),
+       ('25053', '324 Dolor Street', 'Kaneohe', 'Hawaii'),
+       ('37676', '2409 Est Ave', 'Pike Creek', 'Delaware'),
+       ('30333', '802-6897 Nibh Road', 'Portland', 'Oregon'),
+       ('34624', '771-387 Dictum St.', 'Owensboro', 'Kentucky'),
+       ('65884', '770-7537 At Road', 'Glendale', 'Arizona');
+
+INSERT INTO Provider (name, type, location_id)
+VALUES ('Hungarian Pastry Shop', 'dining', 1),
+       ('KoBa Korean BBQ', 'dining', 2),
+       ('Wonders of Hawai', 'tourism', 6),
+       ('The Diamond State', 'tourism', 7),
+       ('Vision Eye Plus', 'health', 3),
+       ('Smile Dental', 'health', 4),
+       ('Style Always', 'barbers', 5),
+       ('Gentlemens Choice', 'barbers', 8),
+       ('Apple Store', 'electronics', 9),
+       ('BMW In-repair', 'car repair', 10),
+       ('Con Edison', 'energy service', 1),
+       ('GE', 'internet service', 2),
+       ('Always There', 'home equipment repair', 3),
+       ('Drilling Perfectionists', 'home equipment repair', 4),
+       ('AirTel', 'internet service', 5),
+       ('General Motors', 'car repair', 6),
+       ('Samsung Store', 'electronics', 7),
+       ('Prime Stationary', 'Education', 8);
+
+INSERT INTO Users (name, email, password)
+VALUES ('Carson Campbell', 'sagittis@mauris.edu', 'WLR33ALO9IF'),
+       ('Gregory Mercer', 'nonummy@aliquamiaculis.org', 'DWO36WWF3EP'),
+       ('Madaline Hickman', 'urna@fuscediam.edu', 'UJD39HJF1KC'),
+       ('Eaton Herman', 'classaptent@risusdonec.com', 'NLO47CCO5KX'),
+       ('Bernard Wilcox', 'vestibulummassarutrum@risusmorbimetus.ca', 'ISR15FUD0NY'),
+       ('George Solomon', 'sedsapiennunc@magnisdis.com', 'YKW28PEQ6LJ'),
+       ('Scarlet Merrill', 'amet@orci.net', 'YIQ17DMZ2OY'),
+       ('Keaton Finley', 'maurisnulla@sodales.net', 'MHI40GSZ4EL'),
+       ('Gregory Suarez', 'liberodui@necmalesuadaut.org', 'QJM59SGW8MQ'),
+       ('Declan Hardy', 'aliquetsem@aliquamvulputateullamcorper.edu', 'JQW76IFG4QW'),
+       ('Whilemina Snyder', 'necante@duis.net', 'EBP78GUS1QI'),
+       ('Jade Wallace', 'ligulaelitpretium@suspendissecommodo.net', 'PHH31LWC0EZ'),
+       ('Howard Duke', 'quamafelis@ipsumdolor.com', 'HSD88INS1RQ'),
+       ('Pandora Torres', 'bibendumfermentum@aliquameu.org', 'CWD36CRU1DF'),
+       ('Rosalyn Johns', 'nuncullamcorpervelit@phasellus.org', 'IFR41ITH5OS'),
+       ('Palmer Montoya', 'nonummyut@atarcu.org', 'WZJ17GFV5MU'),
+       ('Rama Cash', 'interdumfeugiatsed@etiamligulatortor.ca', 'BQK43RAS5XX'),
+       ('Emma Mccarthy', 'magnisdisparturient@acipsum.net', 'QPO76WUE8NJ'),
+       ('Leroy Murphy', 'congueturpis@arcueu.edu', 'EQU25OND3KG'),
+       ('Erin Finch', 'quamafelis@utmolestie.com', 'CRM60XMK4JE'),
+       ('Mikayla Mooney', 'metus@ultricessit.org', 'VVP47LUE7XL'),
+       ('Grant Rosales', 'turpisegestas@vitaerisusduis.com', 'NPE70UCE3KO'),
+       ('Jeremy Hudson', 'tinciduntcongue@etmagna.net', 'VIP02VOL2ED'),
+       ('Brenda Baldwin', 'habitant@eratvolutpat.org', 'WLJ31KGS1NW'),
+       ('Flavia Leblanc', 'aeneaneuismodmauris@pellentesquehabitant.org', 'TWJ72ZSO8MQ'),
+       ('Rinah Sears', 'nullaegetmetus@iaculisquispede.org', 'OUP06VTC2DN'),
+       ('Mark Caldwell', 'cursuspurus@fringilla.net', 'PRF31NVU6FF'),
+       ('Vielka Mclaughlin', 'lectus@quisaccumsan.net', 'EQO02XLV1XL'),
+       ('Keiko Christian', 'orci@cumsociisnatoque.edu', 'JHX85ZUY1CU'),
+       ('Violet Garner', 'orcitincidunt@ante.ca', 'GGB12ULT9TF');
+
+INSERT INTO Employee (ssn, phone_number, employee_id, provider_id) VALUES 
+                     ('270-73-1451', '694-700-0568', 1, 12),
+                     ('122-21-3143', '657-268-8736', 2, 5),
+                     ('474-54-1345', '349-655-2831', 3, 11),
+                     ('759-12-3849', '788-477-6234', 4, 8),
+                     ('930-12-1341', '647-884-4159', 5, 4),
+                     ('950-43-1355', '756-671-3639', 6, 6),
+                     ('361-13-9471', '648-822-3278', 7, 1),
+                     ('843-14-8471', '232-146-3552', 8, 13),
+                     ('484-44-1741', '527-592-9933', 9, 3),
+                     ('275-59-1345', '344-622-4345', 10, 10),
+                     ('007-71-2344', '217-745-1723', 11, 7),
+                     ('619-37-4829', '355-503-4796', 12, 18),
+                     ('275-59-1384', '642-610-8446', 13, 14),
+                     ('628-02-1373', '355-705-4250', 14, 9),
+                     ('347-01-8694', '625-427-5268', 15, 16),
+                     ('399-08-9586', '732-472-7821', 16, 15),
+                     ('556-93-4952', '271-372-5581', 17, 2),
+                     ('078-39-4859', '406-346-8314', 18, 17);
+
+
+INSERT INTO Client (client_id, points_earned)
+VALUES (19, 24),
+       (20, 73),
+       (21, 85),
+       (22, 12),
+       (23, 44),
+       (24, 55),
+       (25, 13),
+       (26, 44),
+       (27, 56),
+       (28, 87),
+       (29, 33),
+       (30, 67);
+
+
+
+INSERT INTO Service_Offerings (name, duration, cost)
+VALUES ('Mens Haircut', 30, 20),
+       ('Womens Hair Care Package', 180, 80),
+       ('Table Booking', 200, 10),
+       ('Order Pastry Online', 5, 2),
+       ('Guided Tour of Dover', 180, 50),
+       ('Eye Check-up', 60, 100),
+       ('Teeth Cleaning', 300, 200),
+       ('New MacBook PreBook', 20, 1599),
+       ('Full Car Check up ', 300, 1000),
+       ('New Connection Booking', 30, 30),
+       ('Engine Checkup', 120, 500),
+       ('Plumbing Work', 60, 30),
+       ('Drilling', 30, 30),
+       ('New Internet Connection ', 60, 40),
+       ('Upgrade Connection ', 40, 100),
+       ('New Galaxy S PreBook', 30, 800),
+       ('Complete School Stationary Shopping', 120, 100),
+       ('Volcano Tour', 300, 200);
+
+
+INSERT INTO Appointments (datetime, status, service_id, employee_id, client_id) 
+VALUES ('2021-10-23 10:00:00', 'Booked', 2, 11, 20),
+       ('2021-10-24 12:00:00', 'Booked', 4, 7, 19),
+       ('2021-10-25 11:00:00', 'Pending', 6, 2, 29),
+       ('2021-10-26 09:00:00', 'Failed', 8, 14, 24),
+       ('2021-10-27 12:00:00', 'Booked', 18, 9, 22),
+       ('2021-10-25 11:00:00', 'Failed', 5, 5, 21),
+       ('2021-10-26 09:00:00', 'Booked', 3, 17, 23),
+       ('2021-10-27 12:00:00', 'Pending', 9, 10, 25),
+       ('2021-10-28 11:00:00', 'Failed', 7, 6, 26),
+       ('2021-10-29 10:00:00', 'Pending', 1, 4, 27),
+       ('2021-10-30 09:30:00', 'Booked', 11, 15, 30),
+       ('2021-10-31 10:30:00', 'Pending', 10, 3, 28);
+
+
+INSERT INTO Employee_Ratings (rating, description, client_id, employee_id)
+VALUES (7, 'Good Service', 20,     11),
+(1,      'Bad Experience. Could not book the appointment',   24,     14),
+(2,      'Bad Serivce',   25,     10),
+(1,     'Bad Serivce',   28,     3),
+(5,      'Good Experience',      23,     17),
+(3,     'Could be better',      29,     2),
+(5,      'Average Experience',   22,     9),
+(2,      'Disappointed',  26,     6),
+(9,      'Excellent Service.',   30,     15),
+(0,      'Couldnt connect with the the service provider',   27,     4),
+(9,      'Excellent Service.',   19,     7),
+(1,      'Could be better.',      21,     5);
+
+
+
+INSERT INTO Operating_Hours (day_of_week, open_at, close_at, provider_id)
+VALUES (1,      800,    1200,   1),
+(2,      800,    1200,   2),
+(3,     800 ,   1200,   3),
+(5,     700,    1200,   3),
+(6,    1000,   1400,   4),
+(7,     800,    1400,   5),
+(7,    1000,   1400,   7),
+(7,    700,    1200,   17),
+(7,    1000,   1400,   8),
+(1,    1000,   1400,   9),
+(2,    700,    1200,   10),
+(3,      800,    1400,   12),
+(4,      900,    1400,   11),
+(5,      900,    1400,   13),
+(6,      900,    1400,   14),
+(7,      700,    1200,   15),
+(2,      800,    1400,   16),
+(2,      700,    1200,   18),
+(2,      800,    1400,   6);
